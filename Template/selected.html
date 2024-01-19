@@ -1,0 +1,11 @@
+       
+        <form method="get" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-secondary">Submit</button>
+
+<ul>
+    {% for item in data %}
+    <li>{{item.title}}|{{item.price}}|{{item.qty}}</li>
+    {% endfor %}
+</ul>

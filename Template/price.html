@@ -1,0 +1,9 @@
+<td>amount:{{total_sum}}</td>
+
+
+<div>
+    {% for category , total_amt in category_totals.items  %}
+   answer:- {{category}}
+   {{total_amt}}
+    {% endfor %}
+</div>

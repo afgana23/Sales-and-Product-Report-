@@ -1,0 +1,108 @@
+{% include "base.html" %}
+  {% block content %} 
+ 
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 " >
+             
+               <div class="tabbtn"> 
+                <h3>Add Data and show data</h3>
+                <a href="{%url 'savedata' %}">Add Data</a>
+                
+                </div>
+                
+                <table class="tabledata" style="width:100%">
+                    <tr>
+                     
+                     <th>ID</th>
+                     <th>TITLE</th>
+                     <th>DATE</th>
+                     <th>CATEGORY</th>
+                     <th>qty</th>
+                     <th>PRICE</th>
+                     <th>amount</th>
+                     <th>SIZE</th>
+                     <th>DESCRIPTION</th>
+                     <th>*</th>
+                     <th>*</th>
+                   </tr>
+                 {% for n in pgnumber %}
+                     <tr>
+                     <td><a href="{% url 'singledata' n.id %}">{{n.id}}</a></td>
+                     
+                      <td>{{n.title}}</td>
+                       <td>{{n.date}}</td>
+                      <td>{{n.category}}</td>
+                      <td>{{n.qty}}</td>
+                      <td>{{n.price}}</td>
+                      <td>{{n.amount}}</td>
+                      <td>{{n.size}}</td>
+                     <td>{{n.description}}</td>
+                      <td><a href="{%url 'updatedata' n.id  %}">UPDATE</a></td>
+                     <td><a href="">DELETE</a></td>
+                    </tr>
+                    {% endfor %}
+              </table>    <br>
+          
+              <!--pagination logic-------  start here
+              {{pgnumber}}
+              Has previous:{{pgnumber.has_previous}}<br>
+              has next:{{pgnumber.has_next}}<br>
+              Has previous:{{pgnumber.has_previous}}<br>
+              has Current:{{pgnumber.number}}<br>
+              number of page:{{pgnumber.paginator.num_pages}}<br>
+
+              {% if pgnumber.has_previous %}
+              <a href="?page=1">&laquo one</a>
+              <a href="?page={{
+                  pgnumber.previous_page_number}}">nxt</a>
+              
+
+              {% endif %}
+
+              Page {{pgnumber.number}} of {{pgnumber.paginator.num_pages}}
+
+              {% if pgnumber.has_next %}
+              <a href="?page={{pgnumber.next_page_number}}">next</a>
+              <a href="?page={{pgnumber.paginator.num_pages}}">last</a>
+
+
+              {% endif %}-->
+
+               <!--xxxxxxxxxxxxx pagination logivc xxxxxxxxxxxxx -->
+               <div class="col-md-12 ">
+               
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    {% if pgnumber.has_previous %}
+                       <li class="page-item"><a class="page-link" href="?page=1">Previous</a>
+                      
+                     {% endif %}
+                    {% if pgnumber.has_next %} 
+                    <li class="page-item"><a class="page-link" href="?page={{pgnumber.next_page_number}}">Next</a></li>
+                   
+                    {% endif %}
+                   
+                  </ul>
+                </nav>
+                
+
+
+
+
+
+              </div>  
+              
+            </div>
+        </div>
+ 
+</section>
+
+
+   
+  {% endblock  %} 
+       
+
+
+

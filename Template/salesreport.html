@@ -1,0 +1,70 @@
+{% include "base.html" %}
+
+    {% block content %} 
+    <section id="sale-report">
+        <h1>Report Sale</h1>
+        <div class="row">
+           
+            <div class="col-md-3">
+                <div class=" salecard">
+                   
+                    <h4>{{sale_amount}}</h4>
+                    <p>total sale Amount</p>
+                  </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="salecard">
+                    <i ></i>
+                    
+                   <h4> {{asset_amount}}</h4>
+                    <p>Product Amount </p>
+                  </div>
+            </div>
+            <div class="col-md-3">
+                <div class="salecard">
+                  
+                   <h4>{{sold_qty}}</h4>
+                    <p>total sold item</p>
+                  </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="salecard">
+                    <h4>   {{asset_qty}}</h4>
+                 
+                    <p>total Product Available</p>
+                  </div>
+            </div>
+            
+          
+        </div>
+
+        <div class="col-md-12">
+           <table>
+            
+            <tr>
+                <th>DAY</th>
+                <th>MONTH</th>
+                <th>YEAR</th>
+                <th>SOLD QTY</th>
+                <th>SOLD AMOUNT</th>
+            </tr>
+            {% for s in report_date %}
+            <tr>
+                <td>{{s.day}}</td>
+                <td>{{s.month}}</td>
+                <td>{{s.year}}</td>
+                <td>{{s.total_sold_qty}}</td>
+                
+                <td>{{s.total_amt}}</td>
+            </tr>
+            {% endfor %}
+           </table>
+        </div>
+
+    </section>
+    
+   
+
+ {% endblock%}

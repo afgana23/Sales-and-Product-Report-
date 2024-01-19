@@ -1,0 +1,36 @@
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+
+      <a class="nav-link active" href="{% url 'index' %}">Home</a>
+    </li>
+    
+    
+    
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'tabledata' %}">Table Data</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'select' %}">report</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'dashboard' %}" >Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'salereport' %}" >Sale report</a>
+    </li>
+    
+    <li class="nav-item">
+      <a  a class="nav-link " href="{% url 'logout' %}" >logout</a>
+    </li>
+    
+    {% else %}
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'login' %}" >login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="{% url 'signup' %}" >Signup</a>
+  </li>
+
+  {% endif %}  
+  </ul>

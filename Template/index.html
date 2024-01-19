@@ -1,0 +1,62 @@
+{% include "base.html" %}
+  {% block content %} 
+ 
+<section id="content">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    
+                    {% for i in data %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="../static/images/R.jpg" alt="Card image" style="width:100%">
+ 
+                            <div class="card-title">
+                                <h2 class="card-title">{{i.title}}</h2>
+                                <p class="card-title">{{i.price}}</p>
+                                <p  class="card-text">{{i.description}}</p>
+                               
+                                {% if user.is_authenticated %}
+                                <p><a href="{% url 'sale' i.id  %}" class="btn btn-primary" >Buy</a></p>
+                               
+
+                                {% else %}
+                             
+                                <a  href="{% url 'login' %}" >Buy </a>
+                               
+                                {% endif %}
+
+
+                             </div>
+                           
+                        </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="side-bar">
+                    <ul>
+                        <li><a href="{%url 'index' %}">All</a></li>
+                        {% for category in ca %}
+                        
+                        <li><a href="?category={{category.c_name}}">{{category.c_name}}</a></li>
+                        {% endfor %}
+                  
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+ 
+</section>
+
+
+   
+  {% endblock  %} 
+       
+
+
+

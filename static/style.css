@@ -1,0 +1,267 @@
+
+/* index page css */
+#content{
+    padding: 79px 0;
+    background-color:#fff;
+}
+.card{
+    text-align: center;
+    border-radius: 10px;
+    border: 3px rgb(241, 197, 131) solid;
+    text-transform:capitalize;
+    margin-bottom: 18px;
+    background-color: rgba(235, 180, 161, 0.244);
+}
+.card-title h2{
+    margin-top: 8px;
+    color: rgb(220, 36, 36);
+    font-size: 19px;
+    text-transform: capitalize;
+}
+.card-title p{
+    color: rgb(15, 14, 14);
+    font-size: 15px;
+}
+
+.side-bar{
+    padding: 35px 12px;
+ 
+    
+}
+.side-bar ul li a{
+    color: rgb(138, 6, 17);
+   text-decoration: none;
+   
+}
+.side-bar ul li {
+  
+    text-decoration: none;
+    font-size: 20px;
+    list-style: none;
+   margin-left: 12px;
+   border-bottom: rgba(17, 12, 43, 0.874) 2px solid;
+   text-align: center;
+}
+
+
+/* navbar cdd */
+
+.nav{
+    background-color: brown;
+   
+}
+.nav-item a{
+    color: #fff;
+    font-size: 19px;
+}
+.nav-item:hover a{
+   background-color: cornsilk;
+   color: red;
+}
+/* dashboard page css */
+
+#dashboard-content{
+    padding: 50px 40px;
+}
+.cat-table {
+    margin: 53px 45px;
+}
+
+
+
+/* tabledata page csss */
+
+.tabbtn a{
+    color:#fff;
+    font-size: 19px;
+    text-decoration: none;
+    background-color: rgb(255, 98, 0);
+    width: 100px;
+    height: 60px;
+    padding: 9px;
+  
+  
+
+}
+.tabledata{
+    margin-top: 22px;
+}
+.tabbtn h3{
+    color: blue;
+    margin: 12px;
+    text-align: center;
+}
+.tabledata a{
+    color:#fff;
+    font-size: 19px;
+    text-decoration: none;
+    background-color: rgb(10, 120, 130) ;
+    width: 100px;
+    height: 60px;
+    padding: 9px;
+   
+}
+.tabledata table ,th,td{
+    margin: 12px;
+    border: rgb(10, 120, 130) 2px solid;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+  
+} 
+th{
+  background-color: rgb(107, 175, 189);
+  
+} 
+
+/* single page css*/
+.singlebody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+    }
+.singleinfo  {
+    padding: 29px;
+    width: 500px;
+            background: #9cb7da;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 2px 2px 20px 5px rgba(24, 59, 216, 0.5);
+     
+}
+.singleinfo h4{
+    color: rgb(114, 221, 169);
+    text-align: center;
+    margin-bottom: 12px;
+}
+.singleinfo ul li{
+    list-style: none;
+    color: rgb(23, 3, 3);
+    font-size: 19px;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    
+}
+li .litt{
+    color: rgb(203, 55, 55);
+    margin-right: 19px;
+    font-weight: 600;
+}
+/* form-save page css */
+
+.form-save{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+   
+}
+.formbox{
+    padding: 42px;
+    width: 500px;
+            background: #b07fc694;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 2px 2px 20px 5px rgba(58, 36, 139, 0.922);
+     
+}
+.formbox h4{
+    color: rgb(103, 12, 149);
+    margin-bottom: 12px;
+    text-transform: capitalize;
+    padding: 12px;
+}
+.formbox button{
+    background-color: red;
+}
+
+/* sale-report page */
+#sale-report{
+    padding: 79px 45px;
+    background-color: rgb(232, 238, 239);
+
+}
+.salecard{
+    background-color: rgb(206, 15, 69);
+    padding: 8px;
+    margin: 12px 12px;
+}
+.salecard p{
+    color: #fff;
+    size: 14px;
+    margin-top: 18px;
+}
+.salecard h4{
+    
+    color: #fff;
+}
+/* login page  page css */
+
+    .login-area{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: rgba(202, 207, 209, 0.9);
+        }
+        
+          .box {
+            width: 500px;
+            background: #fafafa;
+            border-radius: 12px;
+            text-align: center;
+
+            box-shadow: 2px 2px 20px 5px rgba(0,0,0,0.5);
+        
+          }
+          h1 {
+            color: rgba(23, 218, 55, 0.842);
+            font-weight: bold;
+            font-size: 36px;
+            padding: 30px 0;
+            
+          }
+           input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #dc2121;
+            width: 50%;
+            text-align: center;
+            font-size: 21px;
+            font-family: "Nunito", sans-serif;
+        }
+                 
+button{
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    color: #fff;
+    background: rgb(221, 130, 69);
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 12px 0;
+    width: 50%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+    margin-bottom: 40px;
+  }
+  button:hover {
+    background: #c11215;
+  }
+
+/* xxxxxxx login page css xxxxxxxxxxxxxx */
+
+.chart-area{
+    max-width: 350px;
+    max-height: 400px;
+}
+.selectbtn{
+    height: 40px;
+    width: 90px;
+    color: #fff;
+    background: #dc2121;
+  
+}

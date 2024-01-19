@@ -1,0 +1,31 @@
+{% include "base.html" %}
+
+    {% block content %} 
+    <section id="content">
+        <div class="row">
+            <div class="col-md-12">
+             <div class="singlebody">
+               <div class="singleinfo">
+                <h4 >Display Single Data</h4>
+              <ul>
+                    <li><span class="litt">name</span> {{data.title}}</li>
+                    <li><span class="litt">size</span>{{data.size}} </li>
+                    <li> <span class="litt">price</span>{{data.amount}}</li>
+                    <li><span class="litt">qty</span>{{data.qty}} </li>
+                    <li><span class="litt">category</span>{{data.category}} </li>
+                    <li><span class="litt">date</span>{{data.date}}</li>
+                    <li><span class="litt">descriptions</span> {{data.description}}</li>
+                    
+                </ul>
+       
+
+               </div>
+            </div>
+         
+            </div>
+        </div>
+    </section>
+    
+                    
+
+ {% endblock%}

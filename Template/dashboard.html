@@ -1,0 +1,200 @@
+{% include "base.html" %}
+
+   {% block content %} 
+    
+    <section id="dashboard-content">
+      <div class="containet">
+        <div class="row">
+          <div class="col-md-6">
+               <table class="table ">
+                    <tr>
+                        <td>Total Sale</td>
+                        <td colspan="2">{{sold_qty}}</td>
+                     
+                    </tr>
+                    <tr>
+                        <td>Total sale Amount</td>
+                       
+                        <td colspan="2">{{sale_amount}}</td>
+                       
+                    </tr>
+                   </table>
+              </div>
+                  <div class="col-md-6">
+                    <table class="table ">
+                      <tr>
+                          <td>Total Product Available</td>
+                          <td colspan="2">{{qty}}</td>
+                       
+                      </tr>
+                      <tr>
+                          <td>Total available Product Amount</td>
+                         
+                          <td colspan="2">{{total}}</td>
+                         
+                      </tr>
+                     </table>
+
+                  </div> 
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="select-item">
+              <form method="get" action="">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="selectbtn">Submit</button>
+              </form>
+    
+   
+        {% for item in data %}
+    
+        <table>
+          <tr>
+            <th>title</th>
+            <th>price</th>
+            <th>QTY</th>
+            <th>Amount</th>
+            <th>Size</th>
+            <th>Category</th>
+            
+    
+          </tr>
+          <tr>
+            <td>{{item.title}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.qty}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.size}}</td>
+            <td>{{item.category}}</td>
+          </tr>
+        </table>
+        
+        {% endfor %}
+    
+             
+          </div>   
+           
+          </div>
+         
+          <div class="col-md-6">
+            <div class="chart-area">
+
+              <div>
+                  <canvas id="myChart"></canvas>
+                </div>
+                
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                
+                <script>
+                  const ctx = document.getElementById('myChart');
+                
+                  new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                      labels: [{% for n in result %} '{{n.title}}', {% endfor %}],
+                      datasets: [{
+                          barPercentage: 0.5,
+                         barThickness: 31,
+                         maxBarThickness: 38,
+                        minBarLength: 2,
+                        label: '# of Product',
+                        data: [{% for n in result %} {{n.amount}}, {% endfor %}],
+                        backgroundColor: [
+                         'rgba(255, 99, 132, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                         'rgba(255, 205, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)',
+                               'rgba(54, 162, 235, 0.2)',
+                           'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                                    ],
+                             borderColor: [
+                                    'rgb(255, 99, 132)',
+                                     'rgb(255, 159, 64)',
+                                      'rgb(255, 205, 86)',
+                                      'rgb(75, 192, 192)',
+                                      'rgb(54, 162, 235)',
+                                       'rgb(153, 102, 255)',
+                                         'rgb(201, 203, 207)'
+                                                 ],
+                                 borderWidth: 1
+                                    }]
+                                     },
+                              options: {
+                               scales: {
+                                     y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                </script>
+                </div>
+
+
+
+            
+          </div>
+        </div>
+       <div class="row">
+        <div class="col-md-6">
+          <table>
+            
+            <tr>
+                <th>DAY</th>
+                <th>MONTH</th>
+                <th>YEAR</th>
+                <th>SOLD QTY</th>
+                <th>SOLD AMOUNT</th>
+            </tr>
+            {% for s in report_date %}
+            <tr>
+                <td>{{s.day}}</td>
+                <td>{{s.month}}</td>
+                <td>{{s.year}}</td>
+                <td>{{s.total_sold_qty}}</td>
+                
+                <td>{{s.total_amt}}</td>
+            </tr>
+            {% endfor %}
+           </table>
+         
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-6">
+            <div class="cat-table ">
+              <table>
+                  <tr>
+                      <th>cat-name</th>
+                      <th>total</th>
+                  </tr>
+                  {% for ca in sum_cat %}
+                  <tr>
+                      <td>{{ca.category__c_name}}</td>
+                      <td>{{ca.tm}}</td>
+                  </tr>
+                   
+          {% endfor %}
+              </table>
+          </div> 
+          </div>
+         
+        </div>
+       </div> 
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+     </section>
+
+ {% endblock%}
